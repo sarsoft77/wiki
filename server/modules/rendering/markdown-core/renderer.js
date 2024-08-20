@@ -30,6 +30,8 @@ module.exports = {
       highlight(str, lang) {
         if (lang === 'diagram') {
           return `<pre class="diagram">` + Buffer.from(str, 'base64').toString() + `</pre>`
+        } else if (lang === 'out') {
+          return `<pre class="${lang}">${_.escape(str)}</pre>`
         } else {
           return `<pre><code class="language-${lang}">${_.escape(str)}</code></pre>`
         }

@@ -254,6 +254,8 @@ const md = new MarkdownIt({
   highlight(str, lang) {
     if (lang === 'diagram') {
       return `<pre class="diagram">` + Buffer.from(str, 'base64').toString() + `</pre>`
+    } else if (lang === 'out') {
+      return `<pre class="${lang}">${_.escape(str)}</pre>`
     } else if (['mermaid', 'plantuml'].includes(lang)) {
       return `<pre class="codeblock-${lang}"><code>${_.escape(str)}</code></pre>`
     } else {
@@ -739,7 +741,7 @@ export default {
     // Initialize CodeMirror
 
     this.cm = CodeMirror.fromTextArea(this.$refs.cm, {
-      tabSize: 2,
+      tabSize: 3,
       mode: 'text/markdown',
       theme: 'wikijs-dark',
       lineNumbers: true,
