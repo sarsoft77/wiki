@@ -190,7 +190,11 @@ import 'codemirror/addon/selection/active-line.js'
 import 'codemirror/addon/display/fullscreen.js'
 import 'codemirror/addon/display/fullscreen.css'
 import 'codemirror/addon/selection/mark-selection.js'
+import 'codemirror/addon/search/search.js'
+import 'codemirror/addon/search/jump-to-line.js'
 import 'codemirror/addon/search/searchcursor.js'
+import 'codemirror/addon/dialog/dialog.js'
+import 'codemirror/addon/dialog/dialog.css'
 import 'codemirror/addon/hint/show-hint.js'
 import 'codemirror/addon/fold/foldcode.js'
 import 'codemirror/addon/fold/foldgutter.js'
@@ -742,6 +746,7 @@ export default {
 
     this.cm = CodeMirror.fromTextArea(this.$refs.cm, {
       tabSize: 3,
+      setTabFocusMode: true,
       mode: 'text/markdown',
       theme: 'wikijs-dark',
       lineNumbers: true,

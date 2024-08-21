@@ -253,6 +253,34 @@
                   v-list-item-action #[kbd {{ctrlKey}}] + #[kbd Y]
                 v-divider
                 v-list-item
+                  v-list-item-content.body-2 Start searching
+                  v-list-item-action #[kbd {{ctrlKey}}] + #[kbd F]
+                v-divider
+                v-list-item
+                  v-list-item-content.body-2 Find next
+                  v-list-item-action #[kbd {{ctrlKey}}] + #[kbd G]
+                v-divider
+                v-list-item
+                  v-list-item-content.body-2 Find previous
+                  v-list-item-action #[kbd Shift] + #[kbd {{ctrlKey}}] + #[kbd G]
+                v-divider
+                v-list-item
+                  v-list-item-content.body-2 Replace
+                  v-list-item-action #[kbd Shift] + #[kbd {{ctrlKey}}] + #[kbd F]
+                v-divider
+                v-list-item
+                  v-list-item-content.body-2 Replace all
+                  v-list-item-action #[kbd Shift] + #[kbd {{ctrlKey}}] + #[kbd R]
+                v-divider
+                v-list-item
+                  v-list-item-content.body-2 Search (dialog doesn't autoclose, enter to find next, Shift-Enter to find previous)
+                  v-list-item-action #[kbd {{altKey}}] + #[kbd F]
+                v-divider
+                v-list-item
+                  v-list-item-content.body-2 Jump to line
+                  v-list-item-action #[kbd {{altKey}}] + #[kbd G]
+                v-divider
+                v-list-item
                   v-list-item-content
                     v-list-item-title.body-2 Distraction Free Mode
                     v-list-item-subtitle Press <kbd>Esc</kbd> to exit.
