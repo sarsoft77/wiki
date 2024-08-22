@@ -746,7 +746,7 @@ export default {
 
     this.cm = CodeMirror.fromTextArea(this.$refs.cm, {
       tabSize: 3,
-      setTabFocusMode: true,
+      indentUnit: 3,
       mode: 'text/markdown',
       theme: 'wikijs-dark',
       lineNumbers: true,
