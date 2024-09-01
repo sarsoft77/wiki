@@ -7,7 +7,7 @@ module.exports = {
       const window = new JSDOM('').window
       const DOMPurify = createDOMPurify(window)
 
-      const allowedAttrs = ['v-pre', 'v-slot:tabs', 'v-slot:content', 'target']
+      const allowedAttrs = ['v-pre', 'v-slot:tabs', 'v-slot:content', 'target', 'x-on:click', 'x-show', 'x-data']
       const allowedTags = ['tabset', 'template']
 
       if (config.allowDrawIoUnsafe) {

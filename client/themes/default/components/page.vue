@@ -366,6 +366,10 @@ import { get, sync } from 'vuex-pathify'
 import _ from 'lodash'
 import ClipboardJS from 'clipboard'
 import Vue from 'vue'
+import Alpine from 'alpinejs'
+
+window.Alpine = Alpine
+Alpine.start()
 
 Vue.component('Tabset', Tabset)
 

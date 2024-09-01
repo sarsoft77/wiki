@@ -231,6 +231,11 @@ import katexHelper from './common/katex'
 import tabsetHelper from './markdown/tabset'
 import cmFold from './common/cmFold'
 
+// Alpine
+import Alpine from 'alpinejs'
+window.Alpine = Alpine
+Alpine.start()
+
 // ========================================
 // INIT
 // ========================================
@@ -460,7 +465,13 @@ export default {
       // this.$store.set('editor/content', newContent)
       this.processMarkers(this.cm.firstLine(), this.cm.lastLine())
       this.previewHTML = DOMPurify.sanitize(md.render(newContent), {
-        ADD_TAGS: ['foreignObject']
+        ADD_TAGS: ['foreignObject'],
+        ADD_ATTR: ['x-on:click', 'x-show', 'x-data'],
+        CUSTOM_ELEMENT_HANDLING: {
+          tagNameCheck: /button/, // no custom elements are allowed
+          attributeNameCheck: (attr) => attr.match(/^x-/), // allow all attributes starting "x-"
+          allowCustomizedBuiltInElements: true // customized built-ins are allowed
+        }
       })
       this.$nextTick(() => {
         tabsetHelper.format()
